@@ -92,8 +92,8 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "Aliquam"
-      subtitle = "Ipsum Dolor Sit Amet"
+      title = "About Me"
+      subtitle = "Get to know me"
       image = "pic01.jpg"
       url = "blogs/aliquam"
 
@@ -138,13 +138,9 @@ disqusShortname = ""
   # Section Type Two
   [params.two]
     enable = true
-    title = "Massa libero"
-    subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. 
-    Mauris aliquet magna magna sed nunc rhoncus pharetra. 
-    Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
-    Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero.
-    Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus."""
-    buttonText = "Get Started"
+    title = "Get to know me better"
+    subtitle = """Master's in Analytics and Management student at London Business School, cohort 2023'. Curious, and enthusiastic individual highly interested in Fashion, Fitness and Football. I am also a flautist and have performed across multiple cultural avenues in Mumbai, India. """
+    buttonText = "Take a look at my projects"
     url = "blogs"
 
 
