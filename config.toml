@@ -99,7 +99,7 @@ disqusShortname = ""
 
     [[params.tiles.showcase]]
       title = "Data Analysis for Renewable Energy"
-      subtitle = "Feugiat Amet Tempus"
+      subtitle = "Analysing the Country - Renewable Energy contributions"
       image = "renewable.jpeg"
       url = "blogs/tempus"
 
