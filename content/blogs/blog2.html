@@ -27,25 +27,6 @@ period which NASA clearly states that it is the period between
   read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv&quot;, 
            skip = 1, 
            na = &quot;***&quot;)</code></pre>
-<p>Notice that, when using this function, we added two options: <code>skip</code> and
-<code>na</code>.</p>
-<ol style="list-style-type: decimal">
-<li>The <code>skip=1</code> option is there as the real data table only starts in
-Row 2, so we need to skip one row.</li>
-<li><code>na = "***"</code> option informs R how missing observations in the
-spreadsheet are coded. When looking at the spreadsheet, you can see
-that missing data is coded as “***”. It is best to specify this
-here, as otherwise some of the data is not recognized as numeric
-data.</li>
-</ol>
-<p>Once the data is loaded, notice that there is a object titled <code>weather</code>
-in the <code>Environment</code> panel. If you cannot see the panel (usually on the
-top-right), go to <code>Tools</code> &gt; <code>Global Options</code> &gt; <code>Pane Layout</code> and tick
-the checkbox next to <code>Environment</code>. Click on the <code>weather</code> object, and
-the dataframe will pop up on a seperate tab. Inspect the dataframe.</p>
-<p>For each month and year, the dataframe shows the deviation of
-temperature from the normal (expected). Further the dataframe is in wide
-format.</p>
 <p>You have two objectives in this section:</p>
 <ol style="list-style-type: decimal">
 <li><p>Select the year and the twelve month variables from the <code>weather</code>

@@ -68,28 +68,6 @@ weather <-
            na = "***")
 
 ```
-
-Notice that, when using this function, we added two options: `skip` and
-`na`.
-
-1.  The `skip=1` option is there as the real data table only starts in
-    Row 2, so we need to skip one row.
-2.  `na = "***"` option informs R how missing observations in the
-    spreadsheet are coded. When looking at the spreadsheet, you can see
-    that missing data is coded as "\*\*\*". It is best to specify this
-    here, as otherwise some of the data is not recognized as numeric
-    data.
-
-Once the data is loaded, notice that there is a object titled `weather`
-in the `Environment` panel. If you cannot see the panel (usually on the
-top-right), go to `Tools` \> `Global Options` \> `Pane Layout` and tick
-the checkbox next to `Environment`. Click on the `weather` object, and
-the dataframe will pop up on a seperate tab. Inspect the dataframe.
-
-For each month and year, the dataframe shows the deviation of
-temperature from the normal (expected). Further the dataframe is in wide
-format.
-
 You have two objectives in this section:
 
 1.  Select the year and the twelve month variables from the `weather`
