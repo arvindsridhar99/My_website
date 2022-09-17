@@ -98,9 +98,9 @@ disqusShortname = ""
       url = "blogs/aliquam"
 
     [[params.tiles.showcase]]
-      title = "Tempus"
+      title = "Data Analysis for Renewable Energy"
       subtitle = "Feugiat Amet Tempus"
-      image = "pic02.jpg"
+      image = "renewable.jpeg"
       url = "blogs/tempus"
 
     [[params.tiles.showcase]]
