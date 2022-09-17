@@ -106,7 +106,7 @@ chronologically.
 > document, you must delete `eval=FALSE`, **not just here but in all
 > chunks were `eval=FALSE` appears.**
 
-```{r scatter_plot, eval=FALSE}
+```{r scatter_plot}
 
 tidyweather <- tidyweather %>%
   mutate(date = ymd(paste(as.character(Year), Month, "1")),
@@ -138,7 +138,7 @@ We remove data before 1800 and before using `filter`. Then, we use the
 information on which period each observation belongs to. We can assign
 the different periods using `case_when()`.
 
-```{r intervals, eval=FALSE}
+```{r intervals}
 
 comparison <- tidyweather %>% 
   filter(Year>= 1881) %>%     #remove years prior to 1881
@@ -161,7 +161,7 @@ to study the distribution of monthly deviations (`delta`), grouped by
 the different time periods we are interested in. Set `fill` to
 `interval` to group and colour the data by different time periods.
 
-```{r density_plot, eval=FALSE}
+```{r density_plot}
 library(viridis)
 ggplot(comparison, aes(x = delta, fill = interval)) +
   geom_density(alpha=.6) +
@@ -179,7 +179,7 @@ be interested in average annual anomalies. We can do this by using
 `group_by()` and `summarise()`, followed by a scatter plot to display
 the result.
 
-```{r averaging, eval=FALSE}
+```{r averaging}
 
 #creating yearly averages
 average_annual_anomaly <- tidyweather %>% 
