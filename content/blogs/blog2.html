@@ -1,5 +1,5 @@
 ---
-title: "Magna"
+title: "Analysis on Climate Change"
 description: "Lorem Etiam Nullam"
 slug: "magna"
 image: pic09.jpg
@@ -111,6 +111,7 @@ ggplot(comparison, aes(x = delta, fill = interval)) +
   labs(x = &quot;Delta&quot;,
        y = &quot;Density&quot;,
        title = &quot;Distribution of monthly deviations (`delta`) grouped by the different time periods&quot;)</code></pre>
+<p><img src="/blogs/blog2_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>So far, we have been working with monthly anomalies. However, we might
 be interested in average annual anomalies. We can do this by using
 <code>group_by()</code> and <code>summarise()</code>, followed by a scatter plot to display
@@ -132,4 +133,5 @@ ggplot(average_annual_anomaly, aes(x = Year, y = mean_delta)) +
   theme_bw() +
   labs(x = &quot;Year&quot;, 
        y = &quot;Mean tenperature deviation&quot;)</code></pre>
+<p><img src="/blogs/blog2_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>

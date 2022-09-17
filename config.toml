@@ -104,9 +104,9 @@ disqusShortname = ""
       url = "blogs/tempus"
 
     [[params.tiles.showcase]]
-      title = "Magna"
-      subtitle = "Lorem Etiam Nullam"
-      image = "pic03.jpg"
+      title = "Analysis on Climate Change"
+      subtitle = "Understanding the impact of climate change"
+      image = "climate.jpeg"
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
