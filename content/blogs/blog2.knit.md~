@@ -10,42 +10,9 @@ categories:
 date: 2017-10-31T22:26:09-05:00
 draft: false
 ---
-```{r, setup, include=FALSE}
-knitr::opts_chunk$set(
-  message = FALSE, 
-  warning = FALSE, 
-  tidy=FALSE,     # display code as typed
-  size="small")   # slightly smaller font for code
-options(digits = 3)
 
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
-```
 
-```{r load-libraries, include=FALSE}
-library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
-library(mosaic)
-library(ggthemes)
-library(lubridate)
-library(here)
-library(skimr)
-library(janitor)
-library(httr)
-library(readxl)
-library(vroom)
-library(wbstats)
-library(countrycode)
-library(patchwork)
-library(gganimate)
-library(purrr)
-library(gifski)
-library(png)
-library(infer)
-```
+
 
 If we wanted to study climate change, we can find data on the *Combined
 Land-Surface Air and Sea-Surface Water Temperature Anomalies* in the
@@ -60,13 +27,12 @@ period which NASA clearly states that it is the period between
 
 Run the code below to load the file:
 
-```{r weather_data, cache=TRUE}
 
+```r
 weather <- 
   read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv", 
            skip = 1, 
            na = "***")
-
 ```
 You have two objectives in this section:
 
@@ -79,7 +45,8 @@ You have two objectives in this section:
     `tidyweather`, name the variable containing the name of the month as
     `month`, and the temperature deviation values as `delta`.
 
-```{r tidyweather}
+
+```r
 tidyweather <- weather %>% 
                select(1:13) %>% 
                pivot_longer(!Year, names_to = "Month", values_to = "delta")
@@ -106,8 +73,8 @@ chronologically.
 > document, you must delete `eval=FALSE`, **not just here but in all
 > chunks were `eval=FALSE` appears.**
 
-```{r scatter_plot}
 
+```r
 tidyweather <- tidyweather %>%
   mutate(date = ymd(paste(as.character(Year), Month, "1")),
          month = month(date, label=TRUE),
@@ -122,8 +89,9 @@ ggplot(tidyweather, aes(x=date, y = delta))+
     y = "Temperature deviation",
     title = "Weather Anomalies",
   ) 
-
 ```
+
+<img src="blog2_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" />
 
 It is sometimes useful to group data into different time periods to
 study historical data. For example, we often refer to decades such as
@@ -138,8 +106,8 @@ We remove data before 1800 and before using `filter`. Then, we use the
 information on which period each observation belongs to. We can assign
 the different periods using `case_when()`.
 
-```{r intervals}
 
+```r
 comparison <- tidyweather %>% 
   filter(Year>= 1881) %>%     #remove years prior to 1881
   #create new variable 'interval', and assign values based on criteria below:
@@ -150,7 +118,6 @@ comparison <- tidyweather %>%
     Year %in% c(1981:2010) ~ "1981-2010",
     TRUE ~ "2011-present"
   ))
-
 ```
 
 Inspect the `comparison` dataframe by clicking on it in the
@@ -161,7 +128,8 @@ to study the distribution of monthly deviations (`delta`), grouped by
 the different time periods we are interested in. Set `fill` to
 `interval` to group and colour the data by different time periods.
 
-```{r density_plot}
+
+```r
 library(viridis)
 ggplot(comparison, aes(x = delta, fill = interval)) +
   geom_density(alpha=.6) +
@@ -171,16 +139,17 @@ ggplot(comparison, aes(x = delta, fill = interval)) +
   labs(x = "Delta",
        y = "Density",
        title = "Distribution of monthly deviations (`delta`) grouped by the different time periods")
-
 ```
+
+<img src="blog2_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" />
 
 So far, we have been working with monthly anomalies. However, we might
 be interested in average annual anomalies. We can do this by using
 `group_by()` and `summarise()`, followed by a scatter plot to display
 the result.
 
-```{r averaging}
 
+```r
 #creating yearly averages
 average_annual_anomaly <- tidyweather %>% 
   group_by(Year) %>%   #grouping data by Year
@@ -198,5 +167,6 @@ ggplot(average_annual_anomaly, aes(x = Year, y = mean_delta)) +
   theme_bw() +
   labs(x = "Year", 
        y = "Mean tenperature deviation")
-
 ```
+
+<img src="blog2_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" />
