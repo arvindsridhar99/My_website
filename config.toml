@@ -110,9 +110,9 @@ disqusShortname = ""
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
-      title = "Ipsum"
-      subtitle = "Nisl Sed Aliquam"
-      image = "pic04.jpg"
+      title = "Cycles Rental in London"
+      subtitle = "Understanding the cycles rental in London"
+      image = "cycle.jpeg"
       url = "blogs/ipsum"
 
     [[params.tiles.showcase]]
