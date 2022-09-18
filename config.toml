@@ -122,7 +122,7 @@ disqusShortname = ""
       url = "blogs/consequat"
 
     [[params.tiles.showcase]]
-      title = "Etiam"
+      title = "Curriculum Vitae"
       subtitle = "My Professional Experience"
       image = "cv.jpg"
       url = "blogs/etiam"
