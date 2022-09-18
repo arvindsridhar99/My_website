@@ -106,7 +106,7 @@ disqusShortname = ""
     [[params.tiles.showcase]]
       title = "Analysis on Climate Change"
       subtitle = "Understanding the impact of climate change"
-      image = "climate.jpeg"
+      image = "climate.jpg"
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
