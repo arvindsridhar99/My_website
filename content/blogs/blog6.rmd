@@ -1,0 +1,12 @@
+---
+title: "CV "
+description: "My Professional Experience "
+slug: "Etiam"
+image: cv.jpg
+keywords: ""
+categories: 
+    - ""
+    - ""
+date: 2017-10-31T22:26:09-05:00
+draft: false
+---
