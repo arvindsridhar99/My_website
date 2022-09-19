@@ -2,7 +2,7 @@
 title: "Cycle Rental in London"
 description: ""
 slug: "ipsum"
-image: cycle.jpeg
+image: cycle.jpg
 keywords: ""
 categories: 
     - ""
